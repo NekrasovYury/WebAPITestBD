@@ -20,7 +20,8 @@ namespace WebAPI3.Controllers
         // GET: api/Cards
         public IQueryable<Cards> GetCards()
         {
-            return db.Cards;
+            
+            return db.Cards.Include(b => b.User);
         }
 
         // GET: api/Cards/5
