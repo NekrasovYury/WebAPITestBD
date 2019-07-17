@@ -11,27 +11,7 @@ namespace WebApi2.Controllers
     
     public class ClientController : ApiController
     {
-       public List<Client> clients = new List<Client>
-            {
-                { new Client { ClientID = 0, ClientName = "Sergey"} },
-                {new Client { ClientID = 1, ClientName = "Yura"  } },
-                {new Client { ClientID = 2, ClientName = "Pavel" } },
-                {new Client { ClientID = 3, ClientName = "Sanya" } },
-                { new Client { ClientID = 4, ClientName = "Leha" } }
-            };
-
-      public  List<Card> cards = new List<Card>
-        {
-            
-                { new Card { CardID = 12391283 , OwnreID = 0, CardValue = 4000  } },
-                { new Card {CardID = 4939182 , OwnreID = 1, CardValue = 2040  } },
-                { new Card {CardID = 38491982 , OwnreID = 2, CardValue = 3100  } },
-                { new Card{ CardID = 4899182 , OwnreID = 3, CardValue = 4000  } },
-                { new Card {CardID = 4892918 , OwnreID = 3, CardValue = 5500  } },
-                { new Card{ CardID = 4899182 , OwnreID = 4, CardValue = 4020  } },
-                { new Card {CardID = 4892918 , OwnreID = 0, CardValue = 5001  } }
-
-        };
+       
         // GET: api/Client
         [HttpGet]
         public List<Client> Get()
@@ -74,5 +54,26 @@ namespace WebApi2.Controllers
             clients.Remove(clients[id]);
             cards.Remove(cards[clients[id].ClientID]);
         }
+        public List<Client> clients = new List<Client>
+            {
+                { new Client { ClientID = 0, ClientName = "Sergey"} },
+                {new Client { ClientID = 1, ClientName = "Yura"  } },
+                {new Client { ClientID = 2, ClientName = "Pavel" } },
+                {new Client { ClientID = 3, ClientName = "Sanya" } },
+                { new Client { ClientID = 4, ClientName = "Leha" } }
+            };
+
+        public List<Card> cards = new List<Card>
+        {
+
+                { new Card { CardID = 12391283 , OwnreID = 0, CardValue = 4000  } },
+                { new Card {CardID = 4939182 , OwnreID = 1, CardValue = 2040  } },
+                { new Card {CardID = 38491982 , OwnreID = 2, CardValue = 3100  } },
+                { new Card{ CardID = 4899182 , OwnreID = 3, CardValue = 4000  } },
+                { new Card {CardID = 4892918 , OwnreID = 3, CardValue = 5500  } },
+                { new Card{ CardID = 4899182 , OwnreID = 4, CardValue = 4020  } },
+                { new Card {CardID = 4892918 , OwnreID = 0, CardValue = 5001  } }
+
+        };
     }
 }
