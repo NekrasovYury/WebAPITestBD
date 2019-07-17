@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Swashbuckle.Swagger.Annotations;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -18,6 +19,8 @@ namespace WebAPI3.Controllers
         private WebAPI3Context db = new WebAPI3Context();
 
         // GET: api/Cards
+        /// <response code="404">Not Found</response>
+        [SwaggerResponse(HttpStatusCode.NotFound, Type = typeof(Cards), Description = "Not Found: no such endpoint")]
         public IQueryable<Cards> GetCards()
         {
             
